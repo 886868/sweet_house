@@ -13,6 +13,7 @@
         <module>about_spring</module>
         <module>about_netty</module>
         <module>about_concurrency</module>
+        <module>about_pulsar</module>
     </modules>
     <version>1.0-SNAPSHOT</version>
 
