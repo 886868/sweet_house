@@ -11,5 +11,82 @@
 
     <artifactId>about_spring</artifactId>
 
+    <!-- 在maven中添加如下配置 -->
+    <profiles>
+        <profile>
+            <!-- 测试环境 -->
+            <id>test</id>
+            <properties>
+                <package.environment>test</package.environment>
+                <!--<profiles.active>test</profiles.active>-->
+            </properties>
+        </profile>
+        <profile>
+            <!-- 生产环境 -->
+            <id>prod</id>
+            <properties>
+                <package.environment>prod</package.environment>
+                <!--<profiles.active>prod</profiles.active>-->
+            </properties>
+        </profile>
+        <profile>
+            <!-- 开发环境 -->
+            <id>dev</id>
+            <properties>
+                <package.environment>dev</package.environment>
+                <!--<profiles.active>dev</profiles.active>-->
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+    </profiles>
+
+    <dependencies>
+        <!--About DB-->
+        <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <!--<scope>runtime</scope>-->
+        </dependency>
+        <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>druid-spring-boot-starter</artifactId>
+        <version>1.1.21</version>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+
+        <resources>
+            <resource>
+                <directory>src/main/resources/</directory>
+                <!--打包时先排除掉三个文件夹-->
+                <excludes>
+                    <exclude>dev/*</exclude>
+                    <exclude>prod/*</exclude>
+                    <exclude>test/*</exclude>
+                </excludes>
+                <includes>
+                    <!--如果有其他定义通用文件，需要包含进来-->
+                    <!--<include>messages/*</include>-->
+                </includes>
+            </resource>
+            <resource>
+                <!--这里是关键！ 根据不同的环境，把对应文件夹里的配置文件打包-->
+                <directory>src/main/resources/${package.environment}</directory>
+                <!--<directory>src/main/resources/${profiles.active}</directory>-->
+            </resource>
+        </resources>
+    </build>
 
 </project>

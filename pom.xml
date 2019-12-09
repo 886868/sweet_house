@@ -34,10 +34,10 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-batch</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-batch</artifactId>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -53,20 +53,20 @@
         </dependency>
 
         <!--About DB-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>druid-spring-boot-starter</artifactId>
-            <version>1.1.21</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-data-jpa</artifactId>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>mysql</groupId>-->
+            <!--<artifactId>mysql-connector-java</artifactId>-->
+            <!--<scope>runtime</scope>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>com.alibaba</groupId>-->
+            <!--<artifactId>druid-spring-boot-starter</artifactId>-->
+            <!--<version>1.1.21</version>-->
+        <!--</dependency>-->
         <!--other tools-->
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -97,24 +97,16 @@
         </dependency>
     </dependencies>
 
-    <!--<dependencyManagement>-->
-        <!--<dependencies>-->
-            <!--<dependency>-->
-                <!--<groupId>org.springframework.cloud</groupId>-->
-                <!--<artifactId>spring-cloud-dependencies</artifactId>-->
-                <!--<version>Greenwich.SR1</version>-->
-                <!--<type>pom</type>-->
-                <!--<scope>import</scope>-->
-            <!--</dependency>-->
-        <!--</dependencies>-->
-    <!--</dependencyManagement>-->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Greenwich.SR1</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
 </project>

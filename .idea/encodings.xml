@@ -5,6 +5,7 @@
     <file url="file://$PROJECT_DIR$/about_concurrency" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/about_jdk" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/about_netty" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/about_pulsar" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/about_spring" charset="UTF-8" />
   </component>
 </project>
