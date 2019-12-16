@@ -23,6 +23,6 @@
 hs_err_pid*
 
 *.iml
-#target
+target
 .idea
 catalina.base_IS_UNDEFINED
