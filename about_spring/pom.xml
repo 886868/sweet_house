@@ -19,6 +19,8 @@
             <properties>
                 <package.environment>test</package.environment>
                 <!--<profiles.active>test</profiles.active>-->
+                <!--<spring.profiles.active>test</spring.profiles.active>-->
+
             </properties>
         </profile>
         <profile>
@@ -27,6 +29,7 @@
             <properties>
                 <package.environment>prod</package.environment>
                 <!--<profiles.active>prod</profiles.active>-->
+                <!--<spring.profiles.active>prod</spring.profiles.active>-->
             </properties>
         </profile>
         <profile>
@@ -35,6 +38,7 @@
             <properties>
                 <package.environment>dev</package.environment>
                 <!--<profiles.active>dev</profiles.active>-->
+                <!--<spring.profiles.active>dev</spring.profiles.active>-->
             </properties>
             <activation>
                 <activeByDefault>true</activeByDefault>
@@ -87,6 +91,17 @@
                 <!--<directory>src/main/resources/${profiles.active}</directory>-->
             </resource>
         </resources>
+        <!--<resources>-->
+            <!--<resource>-->
+                <!--<directory>src/main/resources</directory>-->
+                <!--<includes>-->
+                    <!--<include>application-${spring.profiles.active}.yml</include>-->
+                    <!--<include>application.yml</include>-->
+                    <!--<include>**/*.xml</include>-->
+                <!--</includes>-->
+                <!--<filtering>true</filtering>-->
+            <!--</resource>-->
+        <!--</resources>-->
     </build>
 
 </project>

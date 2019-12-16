@@ -11,5 +11,43 @@
 
     <artifactId>about_pulsar</artifactId>
 
+    <!--<properties>-->
+        <!--<profiles.active>src/profiles/dev</profiles.active>-->
+    <!--</properties>-->
+
+    <!-- 在maven中添加如下配置 -->
+    <profiles>
+        <profile>
+            <!-- 测试环境 -->
+            <id>test</id>
+            <properties>
+                <package.environment>test</package.environment>
+                <!--<profiles.active>test</profiles.active>-->
+                <!--<spring.profiles.active>test</spring.profiles.active>-->
+
+            </properties>
+        </profile>
+        <profile>
+            <!-- 生产环境 -->
+            <id>prod</id>
+            <properties>
+                <package.environment>prod</package.environment>
+                <!--<profiles.active>prod</profiles.active>-->
+                <!--<spring.profiles.active>prod</spring.profiles.active>-->
+            </properties>
+        </profile>
+        <profile>
+            <!-- 开发环境 -->
+            <id>dev</id>
+            <properties>
+                <!--<package.environment>dev</package.environment>-->
+                <profiles.active>dev</profiles.active>
+                <!--<spring.profiles.active>dev</spring.profiles.active>-->
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+    </profiles>
 
 </project>
