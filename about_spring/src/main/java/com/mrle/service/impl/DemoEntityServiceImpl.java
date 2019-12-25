@@ -10,20 +10,20 @@ import java.util.Optional;
 @Service
 public class DemoEntityServiceImpl implements DemoEntityService {
 
-    private DemoEntityDao dao;
+    private DemoEntityDao demoEntityDao;
 
-    public DemoEntityServiceImpl(DemoEntityDao dao){
-        this.dao = dao;
+    public DemoEntityServiceImpl(DemoEntityDao demoEntityDao){
+        this.demoEntityDao = demoEntityDao;
     }
 
     @Override
     public Optional<DemoEntity> findBySeq(Integer seq) {
-        return dao.findById(seq);
+        return demoEntityDao.findById(seq);
     }
 
 
     @Override
     public DemoEntity save(DemoEntity demoModel) {
-        return dao.save(demoModel);
+        return demoEntityDao.save(demoModel);
     }
 }

@@ -5,7 +5,7 @@ import lombok.*;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "T_MENU")
+@Table(name = "DemoEntity")
 @Builder
 @Data
 @ToString
@@ -17,9 +17,9 @@ public class DemoEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer seq;
 
-    @Enumerated
-    @Column(nullable = false)
-    private Color color;
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false, name = "type")
+    private Type type;
 
 
 }
