@@ -22,6 +22,11 @@ public class TestController {
         this.demoEntityService = demoEntityService;
     }
 
+    @RequestMapping("/t")
+    public String t() {
+        return "t";
+    }
+
     @RequestMapping("/save")
     public ResponseEntity save() {
 
