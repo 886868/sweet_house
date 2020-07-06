@@ -17,6 +17,7 @@
         <module>springbucks</module>
         <module>about_jwt</module>
         <module>about_algo</module>
+        <module>reg</module>
     </modules>
     <version>1.0-SNAPSHOT</version>
 
